@@ -1,0 +1,22 @@
+{
+  "name": "react-json-excel",
+  "version": "1.0.0",
+  "description": "A React component to handle json to excel conversion",
+  "main": "./src/index.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/praveenkumar-outlook/react-json-excel.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Praveenkumar K",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/praveenkumar-outlook/react-json-excel/issues"
+  },
+  "homepage": "https://github.com/praveenkumar-outlook/react-json-excel#readme"
+}
