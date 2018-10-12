@@ -1,12 +1,25 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
 import {JsonToExcel} from "../src";
+import data from "./data";
 
 class App extends Component {
   render() {
-    const data = [{field: "My field data"}],
-      filename = "New file",
-      fields = {field: "Field"},
+    const filename = "New file",
+      fields = {
+        "index": "Index",
+        "guid": "GUID",
+        "isActive": "Is Active?",
+        "balance": "Balance",
+        "picture": "Picture URL",
+        "age": "Age",
+        "eyeColor": "Eye color",
+        "name": "Name",
+        "gender": "Gender",
+        "company": "Company",
+        "email": "E-mail",
+        "phone": "Phone number"
+      },
       separator = ";";
 
     return (

@@ -17,23 +17,62 @@ class JsonToExcel extends Component {
   constructor() {
     super();
     this.state = {
+      data: [],
       fields: [],
-      headers: []
+      headers: [],
+      headers: [],
+      separator: ""
     };
   }
 
   componentDidMount() {
-    const {data, fields} = this.props;
+    const {data, fields, filename, separator} = this.props;
     this.setState({
       data: data,
       fields: Object.keys(fields),
-      headers: Object.keys(fields).map((key) => fields[key])
+      filename: filename,
+      headers: Object.keys(fields).map((key) => fields[key]),
+      separator: separator
     });
+  }
+
+  convertToExcel = () => {
+    const {headers, separator} = this.state,
+      body = this.getBodyData(),
+      header = headers.join(separator);
+
+    return header + "\n" + body;
+  }
+
+  getBodyData = () => {
+    const {data, fields, separator} = this.state;
+
+    return data.map((row) => {
+      return fields.map((field) => {
+        if (row.hasOwnProperty(field)) {
+          return row[field];
+        }
+        return null;
+      }).join(separator);
+    }).join("\n");
+  }
+
+  saveExcel = () => {
+    const data = this.convertToExcel(),
+      blob = new Blob(
+        [data],
+        {
+          type: "text/plain",
+          charset: "utf-8"
+        }
+      );
   }
 
   render() {
     return (
-      <button>Convert Json to Excel</button>
+      <button onClick={this.saveExcel}>
+        Convert Json to Excel
+      </button>
     );
   }
 }
