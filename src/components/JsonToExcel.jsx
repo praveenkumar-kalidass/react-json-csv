@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
+import {saveAs} from "file-saver";
 
 class JsonToExcel extends Component {
   static propTypes = {
@@ -11,7 +12,7 @@ class JsonToExcel extends Component {
 
   static defaultProps = {
     filename: "json-to-excel",
-    separator: ";"
+    separator: ","
   };
 
   constructor() {
@@ -27,6 +28,7 @@ class JsonToExcel extends Component {
 
   componentDidMount() {
     const {data, fields, filename, separator} = this.props;
+
     this.setState({
       data: data,
       fields: Object.keys(fields),
@@ -58,7 +60,8 @@ class JsonToExcel extends Component {
   }
 
   saveExcel = () => {
-    const data = this.convertToExcel(),
+    const {filename} = this.state,
+      data = this.convertToExcel(),
       blob = new Blob(
         [data],
         {
@@ -66,6 +69,8 @@ class JsonToExcel extends Component {
           charset: "utf-8"
         }
       );
+
+    saveAs(blob, [filename + ".csv"]);
   }
 
   render() {

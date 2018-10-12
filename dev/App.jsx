@@ -19,8 +19,7 @@ class App extends Component {
         "company": "Company",
         "email": "E-mail",
         "phone": "Phone number"
-      },
-      separator = ";";
+      };
 
     return (
       <div>
@@ -28,7 +27,6 @@ class App extends Component {
           data={data}
           filename={filename}
           fields={fields}
-          seperator={separator}
           />
       </div>
     );
