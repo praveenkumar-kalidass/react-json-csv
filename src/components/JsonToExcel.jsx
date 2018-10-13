@@ -21,7 +21,6 @@ class JsonToExcel extends Component {
       data: [],
       fields: [],
       headers: [],
-      headers: [],
       separator: ""
     };
   }

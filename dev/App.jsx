@@ -27,7 +27,7 @@ class App extends Component {
           data={data}
           filename={filename}
           fields={fields}
-          />
+        />
       </div>
     );
   }
