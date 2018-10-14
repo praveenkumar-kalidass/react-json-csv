@@ -1,11 +1,8 @@
 const path = require("path");
 
-module.exports = {
+module.exports = (...args) => ({
   entry: path.join(__dirname, "../src/index.jsx"),
-  mode: "production",
-  optimization: {
-    minimize: false
-  },
+  mode: args[1].mode,
   module: {
     rules: [
       {
@@ -28,7 +25,8 @@ module.exports = {
     ]
   },
   output: {
-    filename: "react-json-excel.js",
+    filename: args[1].mode === "production"
+      ? "react-json-excel.min.js": "react-json-excel.js",
     path: path.join(__dirname, "../lib"),
     library: "ReactJsonExcel",
     libraryTarget: "umd"
@@ -44,7 +42,7 @@ module.exports = {
       root: "React",
       commonjs2: "react",
       commonjs: "react",
-      amd: "react",
+      amd: "react"
     }
   }
-};
+});

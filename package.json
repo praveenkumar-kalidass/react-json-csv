@@ -2,10 +2,11 @@
   "name": "react-json-excel",
   "version": "1.0.0",
   "description": "A React component to handle json to excel conversion",
-  "main": "./src/index.jsx",
+  "main": "./lib/react-json-excel.jsx",
   "scripts": {
     "dev": "webpack-dev-server --config ./dev/webpack.config.js",
-    "build": "webpack --config ./tools/webpack.build.config.js",
+    "build": "webpack --config ./tools/webpack.build.config.js --mode=none",
+    "build-min": "webpack --config ./tools/webpack.build.config.js --mode=production",
     "lint": "eslint --ext .jsx src/",
     "lint-dev": "eslint --ext .jsx,.js dev/"
   },
