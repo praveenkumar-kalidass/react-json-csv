@@ -1,5 +1,1 @@
-import JsonToExcel from "./components/JsonToExcel";
-
-export {
-  JsonToExcel
-};
+export JsonToExcel from "./components/JsonToExcel";

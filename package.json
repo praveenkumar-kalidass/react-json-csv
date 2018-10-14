@@ -5,6 +5,7 @@
   "main": "./src/index.jsx",
   "scripts": {
     "dev": "webpack-dev-server --config ./dev/webpack.config.js",
+    "build": "webpack --config ./tools/webpack.build.config.js",
     "lint": "eslint --ext .jsx src/",
     "lint-dev": "eslint --ext .jsx,.js dev/"
   },
@@ -22,9 +23,9 @@
   },
   "homepage": "https://github.com/praveenkumar-outlook/react-json-excel#readme",
   "devDependencies": {
-    "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
