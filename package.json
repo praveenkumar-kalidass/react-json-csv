@@ -4,7 +4,7 @@
   "description": "A React component to handle json to excel conversion",
   "main": "./lib/react-json-excel.jsx",
   "scripts": {
-    "dev": "webpack-dev-server --config ./dev/webpack.config.js",
+    "dev": "webpack-dev-server --config ./dev/webpack.dev.config.js",
     "build": "webpack --config ./tools/webpack.build.config.js --mode=none",
     "build-min": "webpack --config ./tools/webpack.build.config.js --mode=production",
     "lint": "eslint --ext .jsx src/",
