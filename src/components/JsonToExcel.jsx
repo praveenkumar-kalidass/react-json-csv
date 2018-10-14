@@ -4,15 +4,20 @@ import {saveAs} from "file-saver";
 
 class JsonToExcel extends Component {
   static propTypes = {
+    className: PropTypes.string,
     data: PropTypes.array.isRequired,
+    fileformat: PropTypes.string,
     filename: PropTypes.string,
     fields: PropTypes.object,
     separator: PropTypes.string
   };
 
   static defaultProps = {
+    className: "json-to-excel",
+    fileformat: "csv",
     filename: "json-to-excel",
-    separator: ","
+    separator: ",",
+    style: {}
   };
 
   constructor() {
@@ -20,25 +25,23 @@ class JsonToExcel extends Component {
     this.state = {
       data: [],
       fields: [],
-      headers: [],
-      separator: ""
+      headers: []
     };
   }
 
   componentDidMount() {
-    const {data, fields, filename, separator} = this.props;
+    const {data, fields} = this.props;
 
     this.setState({
       data: data,
       fields: Object.keys(fields),
-      filename: filename,
-      headers: Object.keys(fields).map((key) => fields[key]),
-      separator: separator
+      headers: Object.keys(fields).map((key) => fields[key])
     });
   }
 
   convertToExcel = () => {
-    const {headers, separator} = this.state,
+    const {headers} = this.state,
+      {separator} = this.props,
       body = this.getBodyData(),
       header = headers.join(separator);
 
@@ -46,7 +49,8 @@ class JsonToExcel extends Component {
   }
 
   getBodyData = () => {
-    const {data, fields, separator} = this.state;
+    const {data, fields} = this.state,
+      {separator} = this.props;
 
     return data.map((row) => {
       return fields.map((field) => {
@@ -59,7 +63,7 @@ class JsonToExcel extends Component {
   }
 
   saveExcel = () => {
-    const {filename} = this.state,
+    const {fileformat, filename} = this.props,
       data = this.convertToExcel(),
       blob = new Blob(
         [data],
@@ -69,12 +73,18 @@ class JsonToExcel extends Component {
         }
       );
 
-    saveAs(blob, [filename + ".csv"]);
+    saveAs(blob, [filename + "." + fileformat]);
   }
 
   render() {
+    const {className, style} = this.props;
+
     return (
-      <button onClick={this.saveExcel}>
+      <button
+        className={className}
+        onClick={this.saveExcel}
+        style={style}
+      >
         Convert Json to Excel
       </button>
     );
