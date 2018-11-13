@@ -1,4 +1,5 @@
 # React Json Excel
+A React library to render a component that helps in json to excel conversion.
 
 <p>
   <a href="https://badge.fury.io/js/react-json-excel">
