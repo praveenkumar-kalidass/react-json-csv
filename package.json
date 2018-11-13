@@ -2,7 +2,7 @@
   "name": "react-json-excel",
   "version": "1.0.0",
   "description": "A React component to handle json to excel conversion",
-  "main": "./lib/react-json-excel.jsx",
+  "main": "./lib/react-json-excel.js",
   "scripts": {
     "dev": "webpack-dev-server --config ./tools/webpack.dev.config.js",
     "build": "webpack --config ./tools/webpack.build.config.js --mode=none",
@@ -23,7 +23,7 @@
     "csv",
     "convert"
   ],
-  "author": "Praveenkumar K",
+  "author": "Praveenkumar K <praveen.ece@outlook.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/praveenkumar-outlook/react-json-excel/issues"
