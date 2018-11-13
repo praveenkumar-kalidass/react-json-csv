@@ -19,6 +19,11 @@
     "plugins": [
         "react"
     ],
+    "globals": {
+        "describe": true,
+        "it": true,
+        "expect": true
+    },
     "rules": {
         "indent": [
             "error",

@@ -9,7 +9,8 @@ class JsonToExcel extends Component {
     fileformat: PropTypes.string,
     filename: PropTypes.string,
     fields: PropTypes.object,
-    separator: PropTypes.string
+    separator: PropTypes.string,
+    style: PropTypes.object
   };
 
   static defaultProps = {
