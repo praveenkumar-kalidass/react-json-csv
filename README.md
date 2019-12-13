@@ -63,6 +63,7 @@ const className = 'class-name-for-style',
   filename={filename}
   fields={fields}
   style={style}
+  text="Convert Json to Excel"
 />
 ```
 
