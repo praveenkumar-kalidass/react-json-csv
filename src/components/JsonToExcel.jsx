@@ -78,7 +78,7 @@ class JsonToExcel extends Component {
   }
 
   render() {
-    const {className, style} = this.props;
+    const {className, style, text} = this.props;
 
     return (
       <button
@@ -86,7 +86,7 @@ class JsonToExcel extends Component {
         onClick={this.saveExcel}
         style={style}
       >
-        Convert Json to Excel
+        {text}
       </button>
     );
   }
