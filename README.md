@@ -53,7 +53,8 @@ const className = 'class-name-for-style',
   data = [
     { index: 0, guid: 'asdf231234'},
     { index: 1, guid: 'wetr2343af'}
-  ];
+  ],
+  text = "Convert Json to Excel";
 ```
 
 ```html
@@ -63,7 +64,7 @@ const className = 'class-name-for-style',
   filename={filename}
   fields={fields}
   style={style}
-  text="Convert Json to Excel"
+  text={text}
 />
 ```
 

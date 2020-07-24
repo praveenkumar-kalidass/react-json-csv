@@ -23,7 +23,8 @@ class App extends Component {
       },
       style = {
         padding: "5px"
-      };
+      },
+      text = "Convert Json to Excel";
 
     return (
       <div>
@@ -33,6 +34,7 @@ class App extends Component {
           filename={filename}
           fields={fields}
           style={style}
+          text={text}
         />
       </div>
     );

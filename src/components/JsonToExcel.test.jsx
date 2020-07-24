@@ -17,7 +17,8 @@ const data = [
   },
   style = {
     padding: "5px"
-  };
+  },
+  text = "Convert Json to Excel";
 
 describe("Json To Excel", () => {
   it("Should be defined", () => {
@@ -28,6 +29,7 @@ describe("Json To Excel", () => {
         filename={filename}
         fields={fields}
         style={style}
+        text={text}
       />
     );
     expect(wrapper).toBeDefined();
@@ -41,6 +43,7 @@ describe("Json To Excel", () => {
         filename={filename}
         fields={fields}
         style={style}
+        text={text}
       />
     );
     const body = wrapper.instance().convertToExcel();

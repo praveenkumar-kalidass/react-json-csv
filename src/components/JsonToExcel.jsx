@@ -10,7 +10,8 @@ class JsonToExcel extends Component {
     filename: PropTypes.string,
     fields: PropTypes.object,
     separator: PropTypes.string,
-    style: PropTypes.object
+    style: PropTypes.object,
+    text: PropTypes.string
   };
 
   static defaultProps = {
@@ -18,7 +19,8 @@ class JsonToExcel extends Component {
     fileformat: "csv",
     filename: "json-to-excel",
     separator: ",",
-    style: {}
+    style: {},
+    text: "Convert Json to Excel"
   };
 
   constructor() {
