@@ -87,6 +87,7 @@ class JsonToExcel extends Component {
         className={className}
         onClick={this.saveExcel}
         style={style}
+        data-testid="json-to-excel"
       >
         {text}
       </button>

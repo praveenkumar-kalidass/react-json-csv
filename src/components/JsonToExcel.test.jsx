@@ -1,28 +1,30 @@
 import React from "react";
-import {configure, mount, shallow} from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
+import { render, act, fireEvent } from "@testing-library/react";
+import { saveAs } from "file-saver";
 import JsonToExcel from "./JsonToExcel";
 
-configure({ adapter: new Adapter() });
+jest.mock("file-saver", () => ({
+  saveAs: jest.fn(),
+}));
 
-const data = [
-    {"index": 0},
-    {"index": 1},
-    {"index": 2}
-  ],
-  className = "my-convertor",
-  filename = "New file",
-  fields = {
-    "index": "Index"
-  },
-  style = {
-    padding: "5px"
-  },
-  text = "Convert Json to Excel";
+describe("<JsonToExcel />", () => {
+  const data = [
+      {"index": 0},
+      {"index": 1},
+      {"index": 2}
+    ],
+    className = "my-convertor",
+    filename = "New file",
+    fields = {
+      "index": "Index"
+    },
+    style = {
+      padding: "5px"
+    },
+    text = "Convert Json to Excel";
 
-describe("Json To Excel", () => {
-  it("Should be defined", () => {
-    const wrapper = mount(
+  it("should match snapshot", () => {
+    const container = render(
       <JsonToExcel
         data={data}
         className={className}
@@ -32,11 +34,13 @@ describe("Json To Excel", () => {
         text={text}
       />
     );
-    expect(wrapper).toBeDefined();
+
+    expect(container).toBeDefined();
+    expect(container).toMatchSnapshot();
   });
 
-  it("Generate excel data", () => {
-    const wrapper = shallow(
+  it("should call saveAs function to save converted excel", async () => {
+    const { getByTestId } = render(
       <JsonToExcel
         data={data}
         className={className}
@@ -46,7 +50,15 @@ describe("Json To Excel", () => {
         text={text}
       />
     );
-    const body = wrapper.instance().convertToExcel();
-    expect(body).toBeDefined();
+
+    await act(async () => {
+      await fireEvent.click(getByTestId("json-to-excel"));
+    });
+
+    expect(saveAs).toHaveBeenCalledTimes(1);
+    expect(saveAs).toHaveBeenCalledWith(
+      expect.anything(),
+      [ "New file.csv" ],
+    );
   });
 });
