@@ -6,7 +6,6 @@ Object {
   "baseElement": <body>
     <div>
       <button
-        class="my-convertor"
         data-testid="json-to-excel"
         style="padding: 5px;"
       >
@@ -16,7 +15,6 @@ Object {
   </body>,
   "container": <div>
     <button
-      class="my-convertor"
       data-testid="json-to-excel"
       style="padding: 5px;"
     >

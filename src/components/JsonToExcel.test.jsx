@@ -13,7 +13,6 @@ describe("<JsonToExcel />", () => {
       {"index": 1},
       {"index": 2}
     ],
-    className = "my-convertor",
     filename = "New file",
     fields = {
       "index": "Index"
@@ -27,7 +26,6 @@ describe("<JsonToExcel />", () => {
     const container = render(
       <JsonToExcel
         data={data}
-        className={className}
         filename={filename}
         fields={fields}
         style={style}
@@ -43,7 +41,6 @@ describe("<JsonToExcel />", () => {
     const { getByTestId } = render(
       <JsonToExcel
         data={data}
-        className={className}
         filename={filename}
         fields={fields}
         style={style}

@@ -5,8 +5,7 @@ import data from "./data";
 
 class App extends Component {
   render() {
-    const className = "my-convertor",
-      filename = "New file",
+    const filename = "New file",
       fields = {
         "index": "Index",
         "guid": "GUID",
@@ -30,7 +29,6 @@ class App extends Component {
       <div>
         <JsonToExcel
           data={data}
-          className={className}
           filename={filename}
           fields={fields}
           style={style}

@@ -1,59 +1,20 @@
-import React, {Component} from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import {saveAs} from "file-saver";
 
-class JsonToExcel extends Component {
-  static propTypes = {
-    className: PropTypes.string,
-    data: PropTypes.array.isRequired,
-    fileformat: PropTypes.string,
-    filename: PropTypes.string,
-    fields: PropTypes.object,
-    separator: PropTypes.string,
-    style: PropTypes.object,
-    text: PropTypes.string
-  };
+const JsonToExcel = (props) => {
+  const [data, setData] = useState([]);
+  const [fields, setFields] = useState([]);
+  const [headers, setHeaders] = useState([]);
 
-  static defaultProps = {
-    className: "json-to-excel",
-    fileformat: "csv",
-    filename: "json-to-excel",
-    separator: ",",
-    style: {},
-    text: "Convert Json to Excel"
-  };
+  useEffect(() => {
+    setData(props.data);
+    setFields(Object.keys(props.fields));
+    setHeaders(Object.keys(props.fields).map((key) => props.fields[key]));
+  }, []);
 
-  constructor() {
-    super();
-    this.state = {
-      data: [],
-      fields: [],
-      headers: []
-    };
-  }
-
-  componentDidMount() {
-    const {data, fields} = this.props;
-
-    this.setState({
-      data: data,
-      fields: Object.keys(fields),
-      headers: Object.keys(fields).map((key) => fields[key])
-    });
-  }
-
-  convertToExcel = () => {
-    const {headers} = this.state,
-      {separator} = this.props,
-      body = this.getBodyData(),
-      header = headers.join(separator);
-
-    return header + "\n" + body;
-  }
-
-  getBodyData = () => {
-    const {data, fields} = this.state,
-      {separator} = this.props;
+  const getBodyData = () => {
+    const { separator } = props;
 
     return data.map((row) => {
       return fields.map((field) => {
@@ -63,13 +24,21 @@ class JsonToExcel extends Component {
         return null;
       }).join(separator);
     }).join("\n");
-  }
+  };
 
-  saveExcel = () => {
-    const {fileformat, filename} = this.props,
-      data = this.convertToExcel(),
+  const convertToExcel = () => {
+    const { separator } = props,
+      body = getBodyData(),
+      header = headers.join(separator);
+
+    return header + "\n" + body;
+  };
+
+  const saveExcel = () => {
+    const { fileformat, filename } = props,
+      excelData = convertToExcel(),
       blob = new Blob(
-        [data],
+        [ excelData ],
         {
           type: "text/plain",
           charset: "utf-8"
@@ -77,22 +46,35 @@ class JsonToExcel extends Component {
       );
 
     saveAs(blob, [filename + "." + fileformat]);
-  }
+  };
 
-  render() {
-    const {className, style, text} = this.props;
+  return (
+    <button
+      onClick={saveExcel}
+      style={props.style}
+      data-testid="json-to-excel"
+    >
+      {props.text}
+    </button>
+  );
+};
 
-    return (
-      <button
-        className={className}
-        onClick={this.saveExcel}
-        style={style}
-        data-testid="json-to-excel"
-      >
-        {text}
-      </button>
-    );
-  }
-}
+JsonToExcel.propTypes = {
+  data: PropTypes.array.isRequired,
+  fileformat: PropTypes.string,
+  filename: PropTypes.string,
+  fields: PropTypes.object,
+  separator: PropTypes.string,
+  style: PropTypes.object,
+  text: PropTypes.string
+};
+
+JsonToExcel.defaultProps = {
+  fileformat: "csv",
+  filename: "json-to-excel",
+  separator: ",",
+  style: {},
+  text: "Convert Json to Excel"
+};
 
 export default JsonToExcel;

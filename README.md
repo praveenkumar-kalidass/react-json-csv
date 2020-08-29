@@ -41,8 +41,7 @@ import {
 Converts json to excel file (.csv format) and downloads it
 
 ```js
-const className = 'class-name-for-style',
-  filename = 'Excel-file',
+const filename = 'Excel-file',
   fields = {
     "index": "Index",
     "guid": "GUID"
@@ -60,7 +59,6 @@ const className = 'class-name-for-style',
 ```html
 <JsonToExcel
   data={data}
-  className={className}
   filename={filename}
   fields={fields}
   style={style}
