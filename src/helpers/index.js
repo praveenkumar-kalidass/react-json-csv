@@ -1,2 +1,2 @@
 export { default as saveExcel } from "./saveExcel";
-export { default as covertToExcel } from "./convertToExcel";
+export { default as convertToExcel } from "./convertToExcel";

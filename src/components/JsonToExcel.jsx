@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import {saveAs} from "file-saver";
+
+import { convertToExcel, saveExcel } from "../helpers";
 
 const JsonToExcel = (props) => {
   const [data, setData] = useState([]);
@@ -13,44 +14,19 @@ const JsonToExcel = (props) => {
     setHeaders(Object.keys(props.fields).map((key) => props.fields[key]));
   }, []);
 
-  const getBodyData = () => {
-    const { separator } = props;
+  const saveAsExcel = () => {
+    const { fileformat, filename, separator } = props;
 
-    return data.map((row) => {
-      return fields.map((field) => {
-        if (row.hasOwnProperty(field)) {
-          return row[field];
-        }
-        return null;
-      }).join(separator);
-    }).join("\n");
-  };
-
-  const convertToExcel = () => {
-    const { separator } = props,
-      body = getBodyData(),
-      header = headers.join(separator);
-
-    return header + "\n" + body;
-  };
-
-  const saveExcel = () => {
-    const { fileformat, filename } = props,
-      excelData = convertToExcel(),
-      blob = new Blob(
-        [ excelData ],
-        {
-          type: "text/plain",
-          charset: "utf-8"
-        }
-      );
-
-    saveAs(blob, [filename + "." + fileformat]);
+    saveExcel({
+      data: convertToExcel({ data, fields, headers, separator }),
+      fileformat,
+      filename,
+    });
   };
 
   return (
     <button
-      onClick={saveExcel}
+      onClick={saveAsExcel}
       style={props.style}
       data-testid="json-to-excel"
     >
