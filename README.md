@@ -30,7 +30,8 @@ $ npm install --save react-json-excel
 
 ```js
 import {
-  JsonToExcel
+  JsonToExcel,
+  useJsonToExcel
 } from 'react-json-excel';
 ```
 
@@ -65,6 +66,16 @@ const filename = 'Excel-file',
   text={text}
 />
 ```
+
+```js
+const { saveAsExcel } = useJsonToExcel();
+```
+
+```html
+<button onClick={saveAsExcel({ data, fields, filename })}>
+  useJsonToExcel
+</button>
+```html
 
 ## License
 

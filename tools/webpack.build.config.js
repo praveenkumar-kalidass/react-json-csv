@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = (...args) => ({
-  entry: path.join(__dirname, "../src/index.jsx"),
+  entry: path.join(__dirname, "../src/index.js"),
   mode: args[1].mode,
   module: {
     rules: [

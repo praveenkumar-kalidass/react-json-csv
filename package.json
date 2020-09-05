@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "webpack-dev-server --config ./tools/webpack.dev.config.js",
     "build": "webpack --config ./tools/webpack.build.config.js --mode=none",
-    "build-min": "webpack --config ./tools/webpack.build.config.js --mode=production",
+    "build:min": "webpack --config ./tools/webpack.build.config.js --mode=production",
     "lint": "eslint --ext .jsx src/",
-    "lint-dev": "eslint --ext .jsx,.js dev/",
+    "lint:dev": "eslint --ext .jsx,.js dev/",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "coverage": "jest --collectCoverageFrom=\"src/**/*.jsx\" --coverage"
