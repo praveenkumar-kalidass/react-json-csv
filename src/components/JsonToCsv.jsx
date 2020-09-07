@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import { convertToCsv, saveCsv } from "../helpers";
+import { DEFAULT_FILE_NAME, DEFAULT_FILE_FORMAT, CONVERT_LABEL, COMMA } from "../constants";
 
 const JsonToCsv = (props) => {
   const [data, setData] = useState([]);
@@ -46,11 +47,11 @@ JsonToCsv.propTypes = {
 };
 
 JsonToCsv.defaultProps = {
-  fileformat: "csv",
-  filename: "json-to-csv",
-  separator: ",",
+  fileformat: DEFAULT_FILE_FORMAT,
+  filename: DEFAULT_FILE_NAME,
+  separator: COMMA,
   style: {},
-  text: "Convert Json to Csv"
+  text: CONVERT_LABEL
 };
 
 export default JsonToCsv;
