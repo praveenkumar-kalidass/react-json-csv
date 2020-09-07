@@ -2,17 +2,20 @@
 A React library to render a component that helps in json to csv conversion.
 
 <p>
-  <a href="https://badge.fury.io/js/react-json-csv">
+  <a href="https://www.npmjs.com/package/react-json-csv">
     <img src="https://badge.fury.io/js/react-json-csv.svg" alt="npm version" height="18">
   </a>
-  <a href="https://david-dm.org/praveenkumar-outlook/react-json-csv">
-    <img src="https://david-dm.org/praveenkumar-outlook/react-json-csv/status.svg" alt="dependencies Status badge">
+  <a href="https://www.npmjs.com/package/react-json-csv">
+    <img src="https://www.npmjs.com/package/react-json-csv/status.svg" alt="dependencies Status badge">
     </a>
-  <a href="https://david-dm.org/praveenkumar-outlook/react-json-csv#info=devDependencies">
+  <a href="https://www.npmjs.com/package/react-json-csv">
     <img src="https://david-dm.org/praveenkumar-outlook/react-json-csv/dev-status.svg" alt="devDependency Status badge">
   </a>
-  <a href="https://gitter.im/praveekumar-outlook/react-json-csv">
-    <img src="https://badges.gitter.im/Join%20Chat.svg" alt="Gitter badge">
+  <a href="https://www.npmjs.com/package/react-json-csv">
+    <img src="https://img.shields.io/npm/dw/react-json-csv" alt="Downloads">
+  </a>
+  <a href="https://paypal.me/praveenkumarkalidass?locale.x=en_GB">
+    <img src="https://img.shields.io/badge/paypal-donate-red" alt="Paypal">
   </a>
 </p>
 
