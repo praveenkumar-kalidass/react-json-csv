@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { JsonToExcel, useJsonToExcel } from "../src";
+import { JsonToCsv, useJsonToCsv } from "../src";
 import data from "./data";
 
 const App = () => {
-  const { saveAsExcel } = useJsonToExcel();
+  const { saveAsCsv } = useJsonToCsv();
 
   const filename = "New file",
     fields = {
@@ -24,10 +24,10 @@ const App = () => {
     style = {
       padding: "5px"
     },
-    text = "Convert Json to Excel";
+    text = "Convert Json to Csv";
 
-  const saveExcel = () => {
-    saveAsExcel({
+  const saveCsv = () => {
+    saveAsCsv({
       data,
       fields,
       filename
@@ -36,15 +36,15 @@ const App = () => {
 
   return (
     <div>
-      <JsonToExcel
+      <JsonToCsv
         data={data}
         filename={filename}
         fields={fields}
         style={style}
         text={text}
       />
-      <button onClick={saveExcel}>
-        useJsonToExcel
+      <button onClick={saveCsv}>
+        useJsonToCsv
       </button>
     </div>
   );

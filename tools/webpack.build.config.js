@@ -26,9 +26,9 @@ module.exports = (...args) => ({
   },
   output: {
     filename: args[1].mode === "production"
-      ? "react-json-excel.min.js": "react-json-excel.js",
+      ? "react-json-csv.min.js": "react-json-csv.js",
     path: path.join(__dirname, "../lib"),
-    library: "ReactJsonExcel",
+    library: "ReactJsonCsv",
     libraryTarget: "umd"
   },
   resolve: {

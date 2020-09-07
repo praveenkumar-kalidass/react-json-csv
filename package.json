@@ -1,8 +1,8 @@
 {
-  "name": "react-json-excel",
+  "name": "react-json-csv",
   "version": "1.1.0",
-  "description": "A React component to handle json to excel conversion",
-  "main": "./lib/react-json-excel.js",
+  "description": "A React component to handle json to csv conversion",
+  "main": "./lib/react-json-csv.js",
   "scripts": {
     "dev": "webpack-dev-server --config ./tools/webpack.dev.config.js",
     "build": "webpack --config ./tools/webpack.build.config.js --mode=none",
@@ -15,21 +15,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/praveenkumar-outlook/react-json-excel.git"
+    "url": "git+https://github.com/praveenkumar-outlook/react-json-csv.git"
   },
   "keywords": [
     "react",
     "json",
-    "excel",
     "csv",
     "convert"
   ],
   "author": "Praveenkumar Kalidass <praveen.ece@outlook.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/praveenkumar-outlook/react-json-excel/issues"
+    "url": "https://github.com/praveenkumar-outlook/react-json-csv/issues"
   },
-  "homepage": "https://github.com/praveenkumar-outlook/react-json-excel#readme",
+  "homepage": "https://github.com/praveenkumar-outlook/react-json-csv#readme",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",

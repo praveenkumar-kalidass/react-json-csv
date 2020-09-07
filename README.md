@@ -1,17 +1,17 @@
-# React Json Excel
-A React library to render a component that helps in json to excel conversion.
+# React Json Csv
+A React library to render a component that helps in json to csv conversion.
 
 <p>
-  <a href="https://badge.fury.io/js/react-json-excel">
-    <img src="https://badge.fury.io/js/react-json-excel.svg" alt="npm version" height="18">
+  <a href="https://badge.fury.io/js/react-json-csv">
+    <img src="https://badge.fury.io/js/react-json-csv.svg" alt="npm version" height="18">
   </a>
-  <a href="https://david-dm.org/praveenkumar-outlook/react-json-excel">
-    <img src="https://david-dm.org/praveenkumar-outlook/react-json-excel/status.svg" alt="dependencies Status badge">
+  <a href="https://david-dm.org/praveenkumar-outlook/react-json-csv">
+    <img src="https://david-dm.org/praveenkumar-outlook/react-json-csv/status.svg" alt="dependencies Status badge">
     </a>
-  <a href="https://david-dm.org/praveenkumar-outlook/react-json-excel#info=devDependencies">
-    <img src="https://david-dm.org/praveenkumar-outlook/react-json-excel/dev-status.svg" alt="devDependency Status badge">
+  <a href="https://david-dm.org/praveenkumar-outlook/react-json-csv#info=devDependencies">
+    <img src="https://david-dm.org/praveenkumar-outlook/react-json-csv/dev-status.svg" alt="devDependency Status badge">
   </a>
-  <a href="https://gitter.im/praveekumar-outlook/react-json-excel">
+  <a href="https://gitter.im/praveekumar-outlook/react-json-csv">
     <img src="https://badges.gitter.im/Join%20Chat.svg" alt="Gitter badge">
   </a>
 </p>
@@ -21,7 +21,7 @@ A React library to render a component that helps in json to excel conversion.
 Install the component using [NPM](https://www.npmjs.com/):
 
 ```sh
-$ npm install --save react-json-excel
+$ npm install --save react-json-csv
 ```
 
 ## Usage
@@ -30,19 +30,19 @@ $ npm install --save react-json-excel
 
 ```js
 import {
-  JsonToExcel,
-  useJsonToExcel
-} from 'react-json-excel';
+  JsonToCsv,
+  useJsonToCsv
+} from 'react-json-csv';
 ```
 
 ### Render
-- [Json To Excel](#json-to-excel)
+- [Json To Csv](#json-to-csv)
 
-#### Json To Excel
-Converts json to excel file (.csv format) and downloads it
+#### Json To Csv
+Converts json to csv file (.csv format) and downloads it
 
 ```js
-const filename = 'Excel-file',
+const filename = 'Csv-file',
   fields = {
     "index": "Index",
     "guid": "GUID"
@@ -54,11 +54,11 @@ const filename = 'Excel-file',
     { index: 0, guid: 'asdf231234'},
     { index: 1, guid: 'wetr2343af'}
   ],
-  text = "Convert Json to Excel";
+  text = "Convert Json to Csv";
 ```
 
 ```html
-<JsonToExcel
+<JsonToCsv
   data={data}
   filename={filename}
   fields={fields}
@@ -68,12 +68,12 @@ const filename = 'Excel-file',
 ```
 
 ```js
-const { saveAsExcel } = useJsonToExcel();
+const { saveAsCsv } = useJsonToCsv();
 ```
 
 ```html
-<button onClick={saveAsExcel({ data, fields, filename })}>
-  useJsonToExcel
+<button onClick={saveAsCsv({ data, fields, filename })}>
+  useJsonToCsv
 </button>
 ```html
 

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-import { convertToExcel, saveExcel } from "../helpers";
+import { convertToCsv, saveCsv } from "../helpers";
 
-const JsonToExcel = (props) => {
+const JsonToCsv = (props) => {
   const [data, setData] = useState([]);
   const [fields, setFields] = useState([]);
   const [headers, setHeaders] = useState([]);
@@ -14,11 +14,11 @@ const JsonToExcel = (props) => {
     setHeaders(Object.keys(props.fields).map((key) => props.fields[key]));
   }, []);
 
-  const saveAsExcel = () => {
+  const saveAsCsv = () => {
     const { fileformat, filename, separator } = props;
 
-    saveExcel({
-      data: convertToExcel({ data, fields, headers, separator }),
+    saveCsv({
+      data: convertToCsv({ data, fields, headers, separator }),
       fileformat,
       filename,
     });
@@ -26,16 +26,16 @@ const JsonToExcel = (props) => {
 
   return (
     <button
-      onClick={saveAsExcel}
+      onClick={saveAsCsv}
       style={props.style}
-      data-testid="json-to-excel"
+      data-testid="json-to-csv"
     >
       {props.text}
     </button>
   );
 };
 
-JsonToExcel.propTypes = {
+JsonToCsv.propTypes = {
   data: PropTypes.array.isRequired,
   fileformat: PropTypes.string,
   filename: PropTypes.string,
@@ -45,12 +45,12 @@ JsonToExcel.propTypes = {
   text: PropTypes.string
 };
 
-JsonToExcel.defaultProps = {
+JsonToCsv.defaultProps = {
   fileformat: "csv",
-  filename: "json-to-excel",
+  filename: "json-to-csv",
   separator: ",",
   style: {},
-  text: "Convert Json to Excel"
+  text: "Convert Json to Csv"
 };
 
-export default JsonToExcel;
+export default JsonToCsv;

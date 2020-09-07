@@ -1,24 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<JsonToExcel /> should match snapshot 1`] = `
+exports[`<JsonToCsv /> should match snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <button
-        data-testid="json-to-excel"
+        data-testid="json-to-csv"
         style="padding: 5px;"
       >
-        Convert Json to Excel
+        Convert Json to Csv
       </button>
     </div>
   </body>,
   "container": <div>
     <button
-      data-testid="json-to-excel"
+      data-testid="json-to-csv"
       style="padding: 5px;"
     >
-      Convert Json to Excel
+      Convert Json to Csv
     </button>
   </div>,
   "debug": [Function],

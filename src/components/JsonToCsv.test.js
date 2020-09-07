@@ -1,13 +1,13 @@
 import React from "react";
 import { render, act, fireEvent } from "@testing-library/react";
 import { saveAs } from "file-saver";
-import JsonToExcel from "./JsonToExcel";
+import JsonToCsv from "./JsonToCsv";
 
 jest.mock("file-saver", () => ({
   saveAs: jest.fn(),
 }));
 
-describe("<JsonToExcel />", () => {
+describe("<JsonToCsv />", () => {
   const data = [
       {"index": 0},
       {"index": 1},
@@ -20,11 +20,11 @@ describe("<JsonToExcel />", () => {
     style = {
       padding: "5px"
     },
-    text = "Convert Json to Excel";
+    text = "Convert Json to Csv";
 
   it("should match snapshot", () => {
     const container = render(
-      <JsonToExcel
+      <JsonToCsv
         data={data}
         filename={filename}
         fields={fields}
@@ -37,9 +37,9 @@ describe("<JsonToExcel />", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("should call saveAs function to save converted excel", async () => {
+  it("should call saveAs function to save converted csv", async () => {
     const { getByTestId } = render(
-      <JsonToExcel
+      <JsonToCsv
         data={data}
         filename={filename}
         fields={fields}
@@ -49,7 +49,7 @@ describe("<JsonToExcel />", () => {
     );
 
     await act(async () => {
-      await fireEvent.click(getByTestId("json-to-excel"));
+      await fireEvent.click(getByTestId("json-to-csv"));
     });
 
     expect(saveAs).toHaveBeenCalledTimes(1);
