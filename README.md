@@ -40,6 +40,7 @@ import {
 
 ### Render
 - [Json To Csv](#json-to-csv)
+- [use Json To Csv](#use-json-to-csv)
 
 #### Json To Csv
 Converts json to csv file (.csv format) and downloads it
@@ -69,6 +70,8 @@ const filename = 'Csv-file',
   text={text}
 />
 ```
+
+#### use Json To Csv
 
 ```js
 const { saveAsCsv } = useJsonToCsv();
