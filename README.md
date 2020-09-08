@@ -81,7 +81,7 @@ const { saveAsCsv } = useJsonToCsv();
 <button onClick={saveAsCsv({ data, fields, filename })}>
   useJsonToCsv
 </button>
-```html
+```
 
 ## License
 
