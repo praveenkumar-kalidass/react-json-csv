@@ -6,7 +6,7 @@ A React library to render a component that helps in json to csv conversion.
     <img src="https://badge.fury.io/js/react-json-csv.svg" alt="npm version" height="18">
   </a>
   <a href="https://www.npmjs.com/package/react-json-csv">
-    <img src="https://www.npmjs.com/package/react-json-csv/status.svg" alt="dependencies Status badge">
+    <img src="https://david-dm.org/praveenkumar-outlook/react-json-csv/status.svg" alt="dependencies Status badge">
     </a>
   <a href="https://www.npmjs.com/package/react-json-csv">
     <img src="https://david-dm.org/praveenkumar-outlook/react-json-csv/dev-status.svg" alt="devDependency Status badge">
