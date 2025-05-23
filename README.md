@@ -1,23 +1,26 @@
 # React Json Csv
 A React library to render a component that helps in json to csv conversion.
 
-<p>
-  <a href="https://www.npmjs.com/package/react-json-csv">
-    <img src="https://badge.fury.io/js/react-json-csv.svg" alt="npm version" height="18">
+<div align="center">
+  <a href="https://github.com/praveenkumar-kalidass/react-json-csv/blob/HEAD/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
   </a>
   <a href="https://www.npmjs.com/package/react-json-csv">
-    <img src="https://david-dm.org/praveenkumar-outlook/react-json-csv/status.svg" alt="dependencies Status badge">
-    </a>
-  <a href="https://www.npmjs.com/package/react-json-csv">
-    <img src="https://david-dm.org/praveenkumar-outlook/react-json-csv/dev-status.svg" alt="devDependency Status badge">
+    <img src="https://img.shields.io/npm/v/react-json-csv/latest.svg" alt="Version">
   </a>
   <a href="https://www.npmjs.com/package/react-json-csv">
     <img src="https://img.shields.io/npm/dw/react-json-csv" alt="Downloads">
   </a>
+  <a href="https://github.com/praveenkumar-kalidass/react-json-csv/commits/HEAD">
+    <img src="https://img.shields.io/github/checks-status/praveenkumar-kalidass/react-json-csv/HEAD" alt="Branch Status">
+  </a>
+  <a href="https://app.codecov.io/gh/praveenkumar-kalidass/react-json-csv/">
+    <img src="https://img.shields.io/codecov/c/github/praveenkumar-kalidass/react-json-csv.svg" alt="Coverage Status">
+  </a>
   <a href="https://paypal.me/praveenkumarkalidass?locale.x=en_GB">
     <img src="https://img.shields.io/badge/paypal-donate-red" alt="Paypal">
   </a>
-</p>
+</div>
 
 ## Install
 
@@ -25,6 +28,12 @@ Install the component using [NPM](https://www.npmjs.com/):
 
 ```sh
 $ npm install --save react-json-csv
+```
+
+Or [YARN]();
+
+```sh
+$ yarn add react-json-csv
 ```
 
 ## Usage
@@ -39,10 +48,10 @@ import {
 ```
 
 ### Render
-- [Json To Csv](#json-to-csv)
-- [use Json To Csv](#use-json-to-csv)
+- [JsonToCsv](#json-to-csv)
+- [useJsonToCsv](#use-json-to-csv)
 
-#### Json To Csv
+#### JsonToCsv
 Converts json to csv file (.csv format) and downloads it
 
 ```js
@@ -71,7 +80,7 @@ const filename = 'Csv-file',
 />
 ```
 
-#### use Json To Csv
+#### useJsonToCsv
 
 ```js
 const { saveAsCsv } = useJsonToCsv();
@@ -83,6 +92,3 @@ const { saveAsCsv } = useJsonToCsv();
 </button>
 ```
 
-## License
-
-[MIT License](http://opensource.org/licenses/MIT)
